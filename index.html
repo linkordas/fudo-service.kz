@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ИП Князев С.А. — Техподдержка FUDO PAM</title>
+    <meta name="description" content="Официальный партнёр FUDO PAM в Казахстане. Техническая поддержка и консультации.">
+    <style>
+        :root {
+            --primary: #005b9f;
+            --success: #28a745;
+            --gray: #f8f9fa;
+        }
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        header {
+            background: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+        header h1 { margin:0; font-size:2.5em; }
+        header p { margin:10px 0 0; font-size:1.3em; opacity:0.9; }
+        .about-section {
+            background: white;
+            padding: 30px;
+            margin: 0 auto 40px;
+            max-width: 800px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .about-section h2 { color:var(--primary); text-align:center; border-bottom:3px solid #e0e0e0; padding-bottom:10px; }
+        .about-section p { font-size:1.1em; text-align:justify; }
+        .container { max-width:800px; margin:0 auto 50px; padding:0 20px; }
+        .card {
+            background:white; border-radius:12px; padding:30px;
+            box-shadow:0 10px 30px rgba(0,0,0,0.1); margin-bottom:30px;
+        }
+        h2 { color:var(--primary); border-bottom:3px solid #e0e0e0; padding-bottom:10px; }
+        .form-group { margin-bottom:20px; }
+        label { display:block; margin-bottom:8px; font-weight:600; }
+        input[type="text"], input[type="email"], textarea {
+            width:100%; padding:12px 15px; border:2px solid #ddd; border-radius:8px;
+            font-size:16px; transition:all .3s; box-sizing:border-box;
+        }
+        input:focus, textarea:focus { outline:none; border-color:var(--primary); box-shadow:0 0 0 3px rgba(0,91,159,.2); }
+        textarea { min-height:120px; resize:vertical; }
+        button {
+            background:var(--primary); color:white; border:none; padding:14px 30px;
+            font-size:1.1em; border-radius:8px; cursor:pointer; transition:all .3s; font-weight:600;
+        }
+        button:hover { background:#004070; transform:translateY(-2px); }
+        .success-message {
+            display:none; background:#d4edda; color:#155724; padding:20px;
+            border-radius:8px; border:1px solid #c3e6cb; margin-top:20px;
+            text-align:center; font-size:1.2em;
+        }
+        .contacts { margin-top:40px; padding:25px; background:var(--gray); border-radius:10px; text-align:center; }
+        .contacts p { margin:10px 0; font-size:1.2em; }
+        .contacts a { color:var(--primary); text-decoration:none; font-weight:bold; }
+        .pdf-links { margin-top:20px; padding:15px; background:#f8f9fa; border-radius:8px; }
+        .pdf-links h4 { color:var(--primary); margin-bottom:10px; }
+        .pdf-links a { display:block; margin:5px 0; color:var(--primary); text-decoration:none; font-weight:bold; }
+        .pdf-links a:hover { text-decoration:underline; }
+        .lang-toggle { text-align:center; margin-bottom:20px; }
+        .lang-toggle button {
+            background:none; border:1px solid var(--primary); color:var(--primary);
+            padding:8px 16px; margin:0 5px; border-radius:5px; cursor:pointer;
+        }
+        .lang-toggle button.active { background:var(--primary); color:white; }
+        .instructions.en { display:none; }
+        .instructions.ru { display:block; }
+        footer { text-align:center; padding:30px; color:#666; font-size:0.9em; margin-top:50px; }
+        @media (max-width:600px) {
+            header h1 { font-size:2em; }
+            header p { font-size:1.1em; }
+            .card, .about-section { padding:20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ИП Князев С.А.</h1>
+        <p>Официальная техническая поддержка FUDO PAM</p>
+    </header>
+
+    <div class="about-section">
+        <h2>О компании</h2>
+        <p>Индивидуальный предприниматель Князев С.А. — это надежный партнер в сфере информационных технологий и информационной безопасности в Республике Казахстан. Мы специализируемся на техническом сопровождении IT- и ИБ-решений, обеспечивая полный цикл поддержки от консультаций до внедрения. Основное направление — поставки и обслуживание передового программного обеспечения для защиты привилегированного доступа, мониторинга сессий и управления рисками. Как официальный партнер FUDO Security, мы предлагаем agentless-решения для безопасного доступа к критическим системам, включая SSH, RDP и базы данных. Наша команда помогает организациям минимизировать уязвимости, автоматизировать ротацию паролей и проводить аудит активности. С 2022 года мы зарегистрированы в соответствии с законодательством РК, обеспечивая упрощенную систему налогообложения и оперативное обслуживание клиентов по всему Казахстану. Мы работаем с малым и средним бизнесом, государственными учреждениями, фокусируясь на простоте развертывания (за 1 день) и интеграции с Active Directory, LDAP. Наш сайт сочетает удобную систему приема заявок на поддержку с подробными инструкциями, чтобы вы могли быстро решать задачи самостоятельно или обращаться к экспертам.</p>
+    </div>
+
+    <div class="container">
+
+        <div class="card">
+            <h2>Оставить заявку в службу технической поддержки</h2>
+            
+            <!-- РАБОЧАЯ ФОРМА: Formspree + webhook в твой Zapier + красивый редирект -->
+            <form id="supportForm" 
+                  action="https://formspree.io/f/mjkvnljw" 
+                  method="POST">
+
+                <div class="form-group">
+                    <label for="customer">Заказчик (название организации или ФИО) *</label>
+                    <input type="text" id="customer" name="Заказчик" required placeholder="ООО Ромашка / Иванов И.И.">
+                </div>
+
+                <div class="form-group">
+                    <label for="software">Программное обеспечение *</label>
+                    <input type="text" id="software" name="Программное обеспечение" value="FUDO PAM" readonly>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Ваш email (для связи) *</label>
+                    <input type="email" id="email" name="Email" required placeholder="example@company.kz">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Телефон (по желанию)</label>
+                    <input type="text" id="phone" name="Телефон" placeholder="+7 ___ _______">
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Текст заявки (подробно опишите проблему) *</label>
+                    <textarea id="message" name="Текст заявки" required placeholder="Опишите проблему, укажите версию FUDO PAM, когда началась проблема, что уже пробовали сделать..."></textarea>
+                </div>
+
+                <!-- КЛЮЧЕВЫЕ скрытые поля -->
+                <input type="hidden" name="_next" value="//site.com#successMessage"> <!-- остаёмся на той же странице -->
+                <input type="hidden" name="_webhook" value="https://hooks.zapier.com/hooks/catch/25486793/uzxmod0/"> <!-- твой Zapier -->
+
+                <button type="submit">Отправить заявку</button>
+            </form>
+
+            <div id="successMessage" class="success-message">
+                <strong>Заявка успешно отправлена в службу технической поддержки!</strong><br><br>
+                Технический специалист свяжется с вами в ближайшее время.<br>
+                Спасибо за обращение!
+            </div>
+        </div>
+
+
+        <div class="card">
+            <h2>Инструкции по использованию FUDO PAM</h2>
+            <div class="lang-toggle">
+                <button class="active" onclick="showLang('ru')">Русский</button>
+                <button onclick="showLang('en')">English</button>
+            </div>
+
+            <div class="instructions ru">
+                <h3>Введение</h3>
+                <p>FUDO PAM — это система контроля привилегированного доступа (Privileged Access Management), предназначенная для управления пользовательскими сессиями с возможностью контроля и автоматического реагирования на потенциально опасную активность в режиме реального времени.</p>
+                
+                <h3>Основные возможности</h3>
+                <ul>
+                    <li>Активный мониторинг и запись сессий SSH, Telnet, RDP, HTTP, HTTPS, MySQL, Oracle, VNC и других.</li>
+                    <li>Анализ архивных и активных соединений с возможностью контроля сеанса (прекращение, приостановка или присоединение администратором).</li>
+                    <li>Интеграция с LDAP, Active Directory, системами авторизации (Wheel CERB, Radius и др.).</li>
+                    <li>Модуль поведенческого анализа на основе машинного обучения для обнаружения подозрительной активности.</li>
+                    <li>Управление паролями, включая хранилище и ротацию.</li>
+                    <li>Поиск по сессиям с поддержкой OCR на русском, английском и других языках.</li>
+                    <li>Генерация отчетов в PDF и периодические уведомления.</li>
+                </ul>
+
+                <h3>Начало работы</h3>
+                <ol>
+                    <li><strong>Установка:</strong> Разверните FUDO PAM как шлюз (безагентное решение, настройка за 1 день).</li>
+                    <li><strong>Добавление пользователей:</strong> Management → Users → добавить вручную или импортировать из AD/LDAP.</li>
+                    <li><strong>Добавление целевых систем:</strong> Укажите серверы/приложения в разделе Targets.</li>
+                    <li><strong>Настройка политик:</strong> Определите правила доступа и уведомления.</li>
+                    <li><strong>Мониторинг:</strong> Активные сессии → вкладка OCR для поиска по тексту.</li>
+                    <li><strong>Пароли:</strong> Настройте автоматическую ротацию.</li>
+                </ol>
+
+                <div class="pdf-links">
+                    <h4>Скачать официальные PDF-инструкции:</h4>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/en/fudo_user_portal.pdf" target="_blank">User Portal Manual (EN)</a>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/en/fudo_system_documentation.pdf" target="_blank">System Documentation (EN)</a>
+                </div>
+            </div>
+
+            <div class="instructions en">
+                <h3>Introduction</h3>
+                <p>FUDO PAM is a Privileged Access Management (PAM) solution designed for managing user sessions with real-time control and automatic response to potentially dangerous activity.</p>
+                <h3>Main Features</h3>
+                <ul>
+                    <li>Active monitoring and recording of SSH, RDP, HTTP/HTTPS, databases, VNC etc.</li>
+                    <li>Live session control (terminate, pause, join)</li>
+                    <li>Integration with LDAP, Active Directory, Radius</li>
+                    <li>ML-based behavioral analysis</li>
+                    <li>Password vault & automated rotation</li>
+                    <li>OCR search in sessions (including Russian)</li>
+                </ul>
+                <div class="pdf-links">
+                    <h4>Download official PDF manuals:</h4>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/en/fudo_user_portal.pdf" target="_blank">User Portal Manual (EN)</a>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/en/fudo_system_documentation.pdf" target="_blank">System Documentation (EN)</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="contacts card">
+            <h2>Контакты</h2>
+            <p>Телефон: <a href="tel:+77017839300">+7 701 783 93 00</a></p>
+            <p>Email: <a href="mailto:ipfox@mail.ru">ipfox@mail.ru</a></p>
+            <p>Мы работаем с 9:00 до 18:00 (по времени Астаны)</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 ИП Князев С.А. — Официальный партнёр FUDO PAM в Республике Казахстан
+    </footer>
+
+    <script>
+        const form = document.getElementById('supportForm');
+        const successMessage = document.getElementById('successMessage');
+
+        // Показываем сообщение, если вернулись с #successMessage
+        if (window.location.hash === '#successMessage') {
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+        }
+
+        function showLang(lang) {
+            document.querySelectorAll('.instructions').forEach(el => el.style.display = 'none');
+            document.querySelector('.instructions.' + lang).style.display = 'block';
+            document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
