@@ -102,9 +102,8 @@
         <div class="card">
             <h2>Оставить заявку в службу технической поддержки</h2>
             
-            <!-- ТВОЙ РАБОЧИЙ Formspree endpoint -->
             <form id="supportForm" 
-                  action="https://formspree.io/f/xpwedeky" 
+                  action="https://getform.io/f/bjjrkryb" 
                   method="POST">
 
                 <div class="form-group">
@@ -132,8 +131,8 @@
                     <textarea id="message" name="Текст заявки" required placeholder="Опишите проблему, укажите версию FUDO PAM, когда началась проблема, что уже пробовали сделать..."></textarea>
                 </div>
 
-                <!-- Редирект + твой Zapier webhook -->
-                <input type="hidden" name="_next" value="https://linkordas.github.io/fudo-service.kz/#successMessage">
+                <!-- ВСЁ ВКЛЮЧЕНО: редирект + Zapier (Telegram) -->
+                <input type="hidden" name="_redirect" value="https://linkordas.github.io/fudo-service.kz/#successMessage">
                 <input type="hidden" name="_webhook" value="https://hooks.zapier.com/hooks/catch/25486793/uzxmod0/">
 
                 <button type="submit">Отправить заявку</button>
