@@ -77,7 +77,7 @@
         .lang-toggle button.active { background:var(--primary); color:white; }
         .instructions.en { display:none; }
         .instructions.ru { display:block; }
-        footer { text-align:center; padding:30px; color:#666; font-size:0..org; margin-top:50px; }
+        footer { text-align:center; padding:30px; color:#666; font-size:0.9em; margin-top:50px; }
         @media (max-width:600px) {
             header h1 { font-size:2em; }
             header p { font-size:1.1em; }
@@ -102,9 +102,9 @@
         <div class="card">
             <h2>Оставить заявку в службу технической поддержки</h2>
             
-            <!-- Новый Formspree endpoint привязан к max15.01@mail.ru -->
+            <!-- ТВОЙ РАБОЧИЙ Formspree endpoint -->
             <form id="supportForm" 
-                  action="https://formspree.io/f/mkgevpvd" 
+                  action="https://formspree.io/f/xpwedeky" 
                   method="POST">
 
                 <div class="form-group">
@@ -132,7 +132,7 @@
                     <textarea id="message" name="Текст заявки" required placeholder="Опишите проблему, укажите версию FUDO PAM, когда началась проблема, что уже пробовали сделать..."></textarea>
                 </div>
 
-                <!-- Редирект на текущую страницу + твой Zapier webhook -->
+                <!-- Редирект + твой Zapier webhook -->
                 <input type="hidden" name="_next" value="https://linkordas.github.io/fudo-service.kz/#successMessage">
                 <input type="hidden" name="_webhook" value="https://hooks.zapier.com/hooks/catch/25486793/uzxmod0/">
 
@@ -188,7 +188,15 @@
             <div class="instructions en">
                 <h3>Introduction</h3>
                 <p>FUDO PAM is a Privileged Access Management (PAM) solution designed for managing user sessions with real-time control and automatic response to potentially dangerous activity.</p>
-                <!-- остальной английский текст оставлен без изменений -->
+                <h3>Main Features</h3>
+                <ul>
+                    <li>Active monitoring and recording of SSH, RDP, HTTP/HTTPS, databases, VNC etc.</li>
+                    <li>Live session control (terminate, pause, join)</li>
+                    <li>Integration with LDAP, Active Directory, Radius</li>
+                    <li>ML-based behavioral analysis</li>
+                    <li>Password vault & automated rotation</li>
+                    <li>OCR search in sessions (including Russian)</li>
+                </ul>
                 <div class="pdf-links">
                     <h4>Download official PDF manuals:</h4>
                     <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/en/fudo_user_portal.pdf" target="_blank">User Portal Manual (EN)</a>
