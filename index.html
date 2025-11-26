@@ -12,7 +12,6 @@
         header h1 {margin:0;font-size:2.5em;} header p {margin:10px 0 0;font-size:1.3em;opacity:.9;}
         .about-section {background:white;padding:30px;margin:0 auto 40px;max-width:800px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.1);}
         .about-section h2 {color:var(--primary);text-align:center;border-bottom:3px solid #e0e0e0;padding-bottom:10px;}
-        .about-section p {font-size:1.1em;text-align:justify;}
         .container {max-width:800px;margin:0 auto 50px;padding:0 20px;}
         .card {background:white;border-radius:12px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,.1);margin-bottom:30px;}
         h2 {color:var(--primary);border-bottom:3px solid #e0e0e0;padding-bottom:10px;}
@@ -29,8 +28,8 @@
         .contacts p {margin:10px 0;font-size:1.2em;}
         .contacts a {color:var(--primary);text-decoration:none;font-weight:bold;}
         .pdf-links {margin-top:20px;padding:15px;background:#f8f9fa;border-radius:8px;}
-        .pdf-links h4 {color:var(--primary);margin-bottom:10px;}
-        .pdf-links a {display:block;margin:5px 0;color:var(--primary);text-decoration:none;font-weight:bold;}
+        .pdf-links h4 {color:var(--primary);margin-bottom:12px;}
+        .pdf-links a {display:block;margin:8px 0;color:var(--primary);text-decoration:none;font-weight:600;font-size:1.05em;}
         .pdf-links a:hover {text-decoration:underline;}
         .lang-toggle {text-align:center;margin-bottom:20px;}
         .lang-toggle button {background:none;border:1px solid var(--primary);color:var(--primary);padding:8px 16px;margin:0 5px;border-radius:5px;cursor:pointer;}
@@ -38,10 +37,10 @@
         .instructions.en {display:none;}
         .instructions.ru {display:block;}
         footer {text-align:center;padding:30px;color:#666;font-size:0.9em;margin-top:50px;}
-        @media (max-width:600px) {header h1 {font-size:2em;} header p {font-size:1.1em;} .card, .about-section {padding:20px;}}
+        @media (max-width:600px) {.card, .about-section {padding:20px;}}
     </style>
 
-    <!-- ТВОЙ COUNTER.DEV — ГЛОБАЛЬНЫЙ СЧЁТЧИК -->
+    <!-- ТВОЙ ГЛОБАЛЬНЫЙ СЧЁТЧИК ЗАЯВОК -->
     <script src="https://cdn.counter.dev/script.js" data-id="595ace12-3788-4101-9271-0389edf53fc4" data-utcoffset="5"></script>
 </head>
 <body>
@@ -53,7 +52,7 @@
 
     <div class="about-section">
         <h2>О компании</h2>
-        <p>Индивидуальный предприниматель Князев С.А. — это надежный партнер в сфере информационных технологий и информационной безопасности в Республике Казахстан. Мы специализируемся на техническом сопровождении IT- и ИБ-решений, обеспечивая полный цикл поддержки от консультаций до внедрения. Основное направление — поставки и обслуживание передового программного обеспечения для защиты привилегированного доступа, мониторинга сессий и управления рисками. Как официальный партнер FUDO Security, мы предлагаем agentless-решения для безопасного доступа к критическим системам, включая SSH, RDP и базы данных. Наша команда помогает организациям минимизировать уязвимости, автоматизировать ротацию паролей и проводить аудит активности. С 2022 года мы зарегистрированы в соответствии с законодательством РК, обеспечивая упрощенную систему налогообложения и оперативное обслуживание клиентов по всему Казахстану. Мы работаем с малым и средним бизнесом, государственными учреждениями, фокусируясь на простоте развертывания (за 1 день) и интеграции с Active Directory, LDAP. Наш сайт сочетает удобную систему приема заявок на поддержку с подробными инструкциями, чтобы вы могли быстро решать задачи самостоятельно или обращаться к экспертам.</p>
+        <p>Индивидуальный предприниматель Князев С.А. — официальный партнёр FUDO Security в Республике Казахстан. Мы обеспечиваем полный цикл технической поддержки, поставку и внедрение решений FUDO PAM для защиты привилегированного доступа, мониторинга сессий и управления рисками ИБ.</p>
     </div>
 
     <div class="container">
@@ -63,30 +62,29 @@
             <form id="supportForm" action="https://getform.io/f/bjjrkryb" method="POST">
                 <div class="form-group">
                     <label for="customer">Заказчик (название организации или ФИО) *</label>
-                    <input type="text" id="customer" name="Заказчик" required placeholder="ООО Ромашка / Иванов И.И.">
+                    <input type="text" name="Заказчик" required placeholder="ООО Ромашка / Иванов И.И.">
                 </div>
 
                 <div class="form-group">
-                    <label for="software">Программное обеспечение *</label>
-                    <input type="text" id="software" name="Программное обеспечение" value="FUDO PAM" readonly>
+                    <label>Программное обеспечение *</label>
+                    <input type="text" name="Программное обеспечение" value="FUDO PAM" readonly>
                 </div>
 
                 <div class="form-group">
-                    <label for="email">Ваш email (для связи) *</label>
-                    <input type="email" id="email" name="Email" required placeholder="example@company.kz">
+                    <label>Email *</label>
+                    <input type="email" name="Email" required placeholder="example@company.kz">
                 </div>
 
                 <div class="form-group">
-                    <label for="phone">Телефон (по желанию)</label>
-                    <input type="text" id="phone" name="Телефон" placeholder="+7 ___ _______">
+                    <label>Телефон</label>
+                    <input type="text" name="Телефон" placeholder="+7 ___ _______">
                 </div>
 
                 <div class="form-group">
-                    <label for="message">Текст заявки (подробно опишите проблему) *</label>
-                    <textarea id="message" name="Текст заявки" required placeholder="Опишите проблему, укажите версию FUDO PAM, когда началась проблема, что уже пробовали сделать..."></textarea>
+                    <label>Текст заявки *</label>
+                    <textarea name="Текст заявки" required placeholder="Опишите проблему, версию FUDO PAM, когда началась проблема..."></textarea>
                 </div>
 
-                <!-- Скрытое поле — номер попадёт в письмо и Telegram -->
                 <input type="hidden" name="Номер заявки" id="ticketField" value="">
 
                 <button type="submit">Отправить заявку</button>
@@ -94,7 +92,7 @@
 
             <div id="successMessage" class="success-message">
                 <strong>Заявка успешно отправлена!</strong><br><br>
-                <div style="font-size:1.7em;color:#005b9f;font-weight:bold;margin:25px 0;text-align:center;">
+                <div style="font-size:1.8em;color:#005b9f;font-weight:bold;margin:25px 0;">
                     Ваша заявка принята под номером <span id="ticketNumber">№</span>
                 </div>
                 <p>Технический специалист свяжется с вами в ближайшее время.<br>Спасибо за обращение!</p>
@@ -103,53 +101,24 @@
 
         <div class="card">
             <h2>Инструкции по использованию FUDO PAM</h2>
-            <div class="lang-toggle">
-                <button class="active" onclick="showLang('ru')">Русский</button>
-                <button onclick="showLang('en')">English</button>
-            </div>
 
-            <div class="instructions ru">
-                <h3>Введение</h3>
-                <p>FUDO PAM — это система контроля привилегированного доступа (Privileged Access Management), предназначенная для управления пользовательскими сессиями с возможностью контроля и автоматического реагирования на потенциально опасную активность в режиме реального времени.</p>
+            <div class="pdf-links">
+                <h4>Скачать официальные инструкции:</h4>
                 
-                <h3>Основные возможности</h3>
-                <ul>
-                    <li>Активный мониторинг и запись сессий SSH, Telnet, RDP, HTTP, HTTPS, MySQL, Oracle, VNC и других.</li>
-                    <li>Анализ архивных и активных соединений с возможностью контроля сеанса (прекращение, приостановка или присоединение администратором).</li>
-                    <li>Интеграция с LDAP, Active Directory, системами авторизации (Wheel CERB, Radius и др.).</li>
-                    <li>Модуль поведенческого анализа на основе машинного обучения для обнаружения подозрительной активности.</li>
-                    <li>Управление паролями, включая хранилище и ротацию.</li>
-                    <li>Поиск по сессиям с поддержкой OCR на русском, английском и других языках.</li>
-                    <li>Генерация отчетов в PDF и периодические уведомления.</li>
-                </ul>
-
-                <h3>Начало работы</h3>
-                <ol>
-                    <li><strong>Установка:</strong> Разверните FUDO PAM как шлюз (безагентное решение, настройка за 1 день).</li>
-                    <li><strong>Добавление пользователей:</strong> Management → Users → добавить вручную или импортировать из AD/LDAP.</li>
-                    <li><strong>Добавление целевых систем:</strong> Укажите серверы/приложения в разделе Targets.</li>
-                    <li><strong>Настройка политик:</strong> Определите правила доступа и уведомления.</li>
-                    <li><strong>Мониторинг:</strong> Активные сессии → вкладка OCR для поиска по тексту.</li>
-                    <li><strong>Пароли:</strong> Настройте автоматическую ротацию.</li>
-                </ol>
-
-               <div class="pdf-links">
-    <h4>Скачать официальные инструкции FUDO PAM:</h4>
-    
-    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/ru/fudo_user_portal_ru.pdf" target="_blank">
-        Руководство пользователя (русский, PDF)
-    </a>
-    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/ru/fudo_system_documentation_ru.pdf" target="_blank">
-        Системная документация и администрирование (русский, PDF)
-    </a>
-    
-    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/en/fudo_user_portal.pdf" target="_blank">
-        User Portal Manual (English, PDF)
-    </a>
-    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/en/fudo_system_documentation.pdf" target="_blank">
-        System Documentation (English, PDF)
-    </a>
-</div>
+                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/ru/fudo_user_portal_ru.pdf" target="_blank">
+                    Руководство пользователя (русский, PDF)
+                </a>
+                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/ru/fudo_system_documentation_ru.pdf" target="_blank">
+                    Системная документация и администрирование (русский, PDF)
+                </a>
+                
+                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/en/fudo_user_portal.pdf" target="_blank">
+                    User Portal Manual (English, PDF)
+                </a>
+                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/en/fudo_system_documentation.pdf" target="_blank">
+                    System Documentation (English, PDF)
+                </a>
+            </div>
         </div>
 
         <div class="contacts card">
@@ -164,27 +133,25 @@
         © 2025 ИП Князев С.А. — Официальный партнёр FUDO PAM в Республике Казахстан
     </footer>
 
-    <!-- СКРИПТ С COUNTER.DEV — ГЛОБАЛЬНЫЙ НОМЕР Заявки -->
+    <!-- ГЛОБАЛЬНЫЙ НОМЕР ЗАЯВКИ (counter.dev) -->
     <script>
         document.getElementById('supportForm').addEventListener('submit', function(e) {
             const btn = this.querySelector('button');
             btn.disabled = true;
             btn.textContent = "Отправка...";
 
-            // Ждём загрузки counter.dev (твой ID)
             const checkCounter = setInterval(() => {
-                if (window.counter) {
+                if (window.counter && window.counter.value !== undefined) {
                     clearInterval(checkCounter);
-                    const ticket = window.counter.value || '0';
+                    const ticket = window.counter.value;
                     document.getElementById('ticketNumber').textContent = '№' + ticket;
-                    document.getElementById('ticketField').value = ticket;  // В письмо и Telegram
+                    document.getElementById('ticketField').value = ticket;
 
                     this.style.display = 'none';
                     document.getElementById('successMessage').style.display = 'block';
                 }
             }, 100);
 
-            // Таймаут на 5 сек (если скрипт не загрузился)
             setTimeout(() => {
                 clearInterval(checkCounter);
                 if (!window.counter) {
@@ -198,4 +165,3 @@
     </script>
 </body>
 </html>
-
