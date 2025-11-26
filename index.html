@@ -78,33 +78,38 @@
     <footer>© 2025 ИП Князев С.А. — Официальный партнёр FUDO PAM в Республике Казахстан</footer>
 
     <!-- ГЛОБАЛЬНЫЙ СЧЁТЧИК + ОТПРАВКА НОМЕРА В ПИСЬМО И ТЕЛЕГРАМ -->
-    <script>
-        const COUNTER_URL = "https://script.google.com/macros/s/AKfycbwHSm6TgNQ8HdM0U-hDNn6pYCmVXjDQHdZCznwPlR4-gBYvOZgxfsHOArJN4QcYXJqJqw/exec";
+<script>
+    const COUNTER_URL = "https://script.google.com/macros/s/AKfycbwHSm6TgNQ8HdM0U-hDNn6pYCmVXjDQHdZCznwPlR4-gBYvOZgxfsHOArJN4QcYXJqJqw/exec";
 
-        document.getElementById('supportForm').addEventListener('submit', function(e) {
-            const btn = this.querySelector('button');
-            btn.disabled = true;
-            btn.textContent = "Отправка...";
+    document.getElementById('supportForm').addEventListener('submit', function(e) {
+        const btn = this.querySelector('button');
+        btn.disabled = true;
+        btn.textContent = "Отправка...";
 
-            // Получаем глобальный номер
-            fetch(COUNTER_URL + '?t=' + Date.now())
-                .then(r => r.text())
-                .then(num => {
-                    const ticket = num.trim();
+        fetch(COUNTER_URL + '?t=' + Date.now())
+            .then(r => r.text())
+            .then(num => {
+                const ticket = num.trim();
+                if (ticket && !isNaN(ticket)) {
                     document.getElementById('ticketNumber').textContent = '№' + ticket;
-                    document.getElementById('ticketField').value = ticket;  // ← попадает в письмо и Telegram
-
-                    // Показываем успех сразу
-                    this.style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
-                })
-                .catch(() => {
+                    document.getElementById('ticketField').value = ticket;  // попадает в письмо и Telegram
+                } else {
                     document.getElementById('ticketNumber').textContent = '№???';
                     document.getElementById('ticketField').value = 'ошибка';
-                    this.style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
-                });
-        });
-    </script>
+                }
+
+                // Показываем успех
+                this.style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            })
+            .catch(err => {
+                document.getElementById('ticketNumber').textContent = '№???';
+                document.getElementById('ticketField').value = 'нет связи';
+                this.style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+            });
+    });
+</script>
 </body>
 </html>
+
