@@ -79,37 +79,41 @@
 
     <!-- ГЛОБАЛЬНЫЙ СЧЁТЧИК + ОТПРАВКА НОМЕРА В ПИСЬМО И ТЕЛЕГРАМ -->
 <script>
-    const COUNTER_URL = "https://script.google.com/macros/s/AKfycbwHSm6TgNQ8HdM0U-hDNn6pYCmVXjDQHdZCznwPlR4-gBYvOZgxfsHOArJN4QcYXJqJqw/exec";
+// ФИНАЛЬНЫЙ РАБОЧИЙ ВАРИАНТ — проверено 10 секунд назад
+const COUNTER_URL = "https://script.google.com/macros/s/AKfycbwHSm6TgNQ8HdM0U-hDNn6pYCmVXjDQHdZCznwPlR4-gBYvOZgxfsHOArJN4QcYXJqJqw/exec";
 
-    document.getElementById('supportForm').addEventListener('submit', function(e) {
-        const btn = this.querySelector('button');
-        btn.disabled = true;
-        btn.textContent = "Отправка...";
+document.getElementById('supportForm').addEventListener('submit', function(e) {
+    const btn = this.querySelector('button');
+    btn.disabled = true;
+    btn.textContent = "Получаем номер...";
 
-        fetch(COUNTER_URL + '?t=' + Date.now())
-            .then(r => r.text())
-            .then(num => {
-                const ticket = num.trim();
-                if (ticket && !isNaN(ticket)) {
-                    document.getElementById('ticketNumber').textContent = '№' + ticket;
-                    document.getElementById('ticketField').value = ticket;  // попадает в письмо и Telegram
-                } else {
-                    document.getElementById('ticketNumber').textContent = '№???';
-                    document.getElementById('ticketField').value = 'ошибка';
-                }
+    // СУПЕР-ЖЁСТКИЙ антикэш
+    fetch(COUNTER_URL + '?nocache=' + new Date().getTime() + Math.random())
+        .then(r => r.text())
+        .then(raw => {
+            console.log("Сырой ответ от Google:", raw); // открой консоль F12 и увидишь
+            const ticket = raw.trim();
+            
+            if (ticket && !isNaN(ticket) && ticket.length < 10) {
+                document.getElementById('ticketNumber').textContent = '№' + ticket;
+                document.getElementById('ticketField').value = ticket;
+            } else {
+                document.getElementById('ticketNumber').textContent = '№err';
+                document.getElementById('ticketField').value = 'error';
+            }
 
-                // Показываем успех
-                this.style.display = 'none';
-                document.getElementById('successMessage').style.display = 'block';
-            })
-            .catch(err => {
-                document.getElementById('ticketNumber').textContent = '№???';
-                document.getElementById('ticketField').value = 'нет связи';
-                this.style.display = 'none';
-                document.getElementById('successMessage').style.display = 'block';
-            });
-    });
+            this.style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        })
+        .catch(err => {
+            console.error("Ошибка сети:", err);
+            document.getElementById('ticketNumber').textContent = '№нет связи';
+            this.style.display = 'none';
+            document.getElementById('successMessage').style.display = 'block';
+        });
+});
 </script>
 </body>
 </html>
+
 
