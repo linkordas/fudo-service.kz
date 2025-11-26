@@ -10,6 +10,8 @@
         body {margin:0;font-family:'Segoe UI',Arial,sans-serif;background:linear-gradient(135deg,#f5f7fa 0%,#c3cfe2 100%);color:#333;line-height:1.6;min-height:100vh;}
         header {background:var(--primary);color:white;text-align:center;padding:40px 20px;box-shadow:0 4px 10px rgba(0,0,0,.2);}
         header h1 {margin:0;font-size:2.5em;} header p {margin:10px 0 0;font-size:1.3em;opacity:.9;}
+        .about-section {background:white;padding:30px;margin:0 auto 40px;max-width:800px;border-radius:12px;box-shadow:0 10px 30px rgba(0,0,0,.1);}
+        .about-section h2 {color:var(--primary);text-align:center;border-bottom:3px solid #e0e0e0;padding-bottom:10px;}
         .container {max-width:800px;margin:0 auto 50px;padding:0 20px;}
         .card {background:white;border-radius:12px;padding:30px;box-shadow:0 10px 30px rgba(0,0,0,.1);margin-bottom:30px;}
         h2 {color:var(--primary);border-bottom:3px solid #e0e0e0;padding-bottom:10px;}
@@ -22,6 +24,9 @@
         button:hover {background:#004070;transform:translateY(-2px);}
         button:disabled {background:#999;cursor:not-allowed;}
         .success-message {display:none;background:#d4edda;color:#155724;padding:30px;border-radius:12px;border:1px solid #c3e6cb;text-align:center;font-size:1.2em;}
+        .contacts {margin-top:40px;padding:25px;background:var(--gray);border-radius:10px;text-align:center;}
+        .contacts p {margin:10px 0;font-size:1.2em;}
+        .contacts a {color:var(--primary);text-decoration:none;font-weight:bold;}
         .pdf-links {margin-top:20px;padding:15px;background:#f8f9fa;border-radius:8px;}
         .pdf-links h4 {color:var(--primary);margin-bottom:12px;}
         .pdf-links a {display:block;margin:8px 0;color:var(--primary);text-decoration:none;font-weight:600;font-size:1.05em;}
@@ -30,89 +35,148 @@
         .lang-toggle button {background:none;border:2px solid var(--primary);color:var(--primary);padding:8px 20px;margin:0 8px;border-radius:8px;cursor:pointer;font-weight:600;transition:all .3s;}
         .lang-toggle button.active {background:var(--primary);color:white;}
         footer {text-align:center;padding:30px;color:#666;font-size:0.9em;margin-top:50px;}
+        @media (max-width:600px) {.card, .about-section {padding:20px;}}
     </style>
 
-    <!-- Твой глобальный счётчик -->
+    <!-- Твой глобальный счётчик заявок -->
     <script src="https://cdn.counter.dev/script.js" data-id="595ace12-3788-4101-9271-0389edf53fc4" data-utcoffset="5"></script>
 </head>
 <body>
-    <!-- Весь верх сайта (header, about, форма, successMessage) — оставь как у тебя сейчас -->
 
-    <!-- БЛОК С ИНСТРУКЦИЯМИ — ПОЛНОСТЬЮ ЗАМЕНИ -->
-    <div class="card">
-        <h2>Инструкции по использованию FUDO PAM</h2>
+    <header>
+        <h1>ИП Князев С.А.</h1>
+        <p>Официальная техническая поддержка FUDO PAM</p>
+    </header>
 
-        <div class="lang-toggle">
-            <button class="active" onclick="showLang('ru')">Русский</button>
-            <button onclick="showLang('en')">English</button>
-        </div>
+    <div class="about-section">
+        <h2>О компании</h2>
+        <p>Индивидуальный предприниматель Князев С.А. — официальный партнёр FUDO Security в Республике Казахстан. Мы обеспечиваем полный цикл технической поддержки, поставку и внедрение решений FUDO PAM для защиты привилегированного доступа, мониторинга сессий и управления рисками ИБ.</p>
+    </div>
 
-        <!-- Русский блок (по умолчанию видно) -->
-        <div id="lang-ru" class="instructions">
-            <h3>Введение</h3>
-            <p>FUDO PAM — это система контроля привилегированного доступа (Privileged Access Management)...</p>
-            <h3>Основные возможности</h3>
-            <ul>
-                <li>Активный мониторинг и запись сессий SSH, Telnet, RDP, HTTP, HTTPS, MySQL, Oracle, VNC и других.</li>
-                <li>Анализ архивных и активных соединений с возможностью контроля сеанса.</li>
-                <li>Интеграция с LDAP, Active Directory, Radius и др.</li>
-                <li>Модуль поведенческого анализа на основе машинного обучения.</li>
-                <li>Управление и ротация паролей.</li>
-                <li>Поиск по сессиям с OCR на русском и английском.</li>
-            </ul>
+    <div class="container">
+        <!-- Форма заявки -->
+        <div class="card">
+            <h2>Оставить заявку в службу технической поддержки</h2>
+            
+            <form id="supportForm" action="https://getform.io/f/bjjrkryb" method="POST">
+                <div class="form-group">
+                    <label>Заказчик (название организации или ФИО) *</label>
+                    <input type="text" name="Заказчик" required placeholder="ООО Ромашка / Иванов И.И.">
+                </div>
+                <div class="form-group">
+                    <label>Программное обеспечение *</label>
+                    <input type="text" name="Программное обеспечение" value="FUDO PAM" readonly>
+                </div>
+                <div class="form-group">
+                    <label>Email *</label>
+                    <input type="email" name="Email" required placeholder="example@company.kz">
+                </div>
+                <div class="form-group">
+                    <label>Телефон</label>
+                    <input type="text" name="Телефон" placeholder="+7 ___ _______">
+                </div>
+                <div class="form-group">
+                    <label>Текст заявки *</label>
+                    <textarea name="Текст заявки" required placeholder="Опишите проблему, версию FUDO PAM, когда началась проблема..."></textarea>
+                </div>
 
-            <div class="pdf-links">
-                <h4>Скачать официальные инструкции:</h4>
-                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/ru/fudo_user_portal_ru.pdf" target="_blank">Руководство пользователя (русский, PDF)</a>
-                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/ru/fudo_system_documentation_ru.pdf" target="_blank">Системная документация и администрирование (русский, PDF)</a>
-                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/en/fudo_user_portal.pdf" target="_blank">User Portal Manual (English, PDF)</a>
-                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/en/fudo_system_documentation.pdf" target="_blank">System Documentation (English, PDF)</a>
+                <input type="hidden" name="Номер заявки" id="ticketField" value="">
+
+                <button type="submit">Отправить заявку</button>
+            </form>
+
+            <div id="successMessage" class="success-message">
+                <strong>Заявка успешно отправлена!</strong><br><br>
+                <div style="font-size:1.8em;color:#005b9f;font-weight:bold;margin:25px 0;">
+                    Ваша заявка принята под номером <span id="ticketNumber">№</span>
+                </div>
+                <p>Технический специалист свяжется с вами в ближайшее время.<br>Спасибо за обращение!</p>
             </div>
         </div>
 
-        <!-- Английский блок (по умолчанию скрыт) -->
-        <div id="lang-en" class="instructions" style="display:none;">
-            <h3>Introduction</h3>
-            <p>FUDO PAM is a Privileged Access Management (PAM) solution designed for managing user sessions with real-time control and automatic response to potentially dangerous activity.</p>
-            <h3>Key Features</h3>
-            <ul>
-                <li>Active monitoring and recording of SSH, Telnet, RDP, HTTP, HTTPS, MySQL, Oracle, VNC sessions and more.</li>
-                <li>Real-time session control (terminate, pause, join).</li>
-                <li>Integration with LDAP, Active Directory, Radius, etc.</li>
-                <li>Behavioral analysis module based on machine learning.</li>
-                <li>Password management and rotation.</li>
-                <li>OCR search in sessions (Russian & English).</li>
-            </ul>
+        <!-- Инструкции с переключением языка -->
+        <div class="card">
+            <h2>Инструкции по использованию FUDO PAM</h2>
 
-            <div class="pdf-links">
-                <h4>Download official manuals:</h4>
-                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/en/fudo_user_portal.pdf" target="_blank">User Portal Manual (English, PDF)</a>
-                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/en/fudo_system_documentation.pdf" target="_blank">System Documentation (English, PDF)</a>
-                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/ru/fudo_user_portal_ru.pdf" target="_blank">Руководство пользователя (русский, PDF)</a>
-                <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/ru/fudo_system_documentation_ru.pdf" target="_blank">Системная документация (русский, PDF)</a>
+            <div class="lang-toggle">
+                <button class="active" onclick="showLang('ru')">Русский</button>
+                <button onclick="showLang('en')">English</button>
             </div>
+
+            <!-- Русский -->
+            <div id="lang-ru" class="instructions">
+                <h3>Введение</h3>
+                <p>FUDO PAM — это система контроля привилегированного доступа (Privileged Access Management), предназначенная для управления пользовательскими сессиями с возможностью контроля и автоматического реагирования на потенциально опасную активность в режиме реального времени.</p>
+                
+                <h3>Основные возможности</h3>
+                <ul>
+                    <li>Активный мониторинг и запись сессий SSH, Telnet, RDP, HTTP, HTTPS, MySQL, Oracle, VNC и других.</li>
+                    <li>Анализ архивных и активных соединений с возможностью контроля сеанса (прекращение, приостановка или присоединение).</li>
+                    <li>Интеграция с LDAP, Active Directory, Radius и др.</li>
+                    <li>Модуль поведенческого анализа на основе машинного обучения.</li>
+                    <li>Управление паролями, включая хранилище и ротацию.</li>
+                    <li>Поиск по сессиям с поддержкой OCR на русском и английском.</li>
+                </ul>
+
+                <div class="pdf-links">
+                    <h4>Скачать официальные инструкции:</h4>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/ru/fudo_user_portal_ru.pdf" target="_blank">Руководство пользователя (русский, PDF)</a>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/ru/fudo_system_documentation_ru.pdf" target="_blank">Системная документация и администрирование (русский, PDF)</a>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/en/fudo_user_portal.pdf" target="_blank">User Portal Manual (English, PDF)</a>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/en/fudo_system_documentation.pdf" target="_blank">System Documentation (English, PDF)</a>
+                </div>
+            </div>
+
+            <!-- English -->
+            <div id="lang-en" class="instructions" style="display:none;">
+                <h3>Introduction</h3>
+                <p>FUDO PAM is a Privileged Access Management (PAM) solution designed for managing user sessions with real-time control and automatic response to potentially dangerous activity.</p>
+                
+                <h3>Key Features</h3>
+                <ul>
+                    <li>Active monitoring and recording of SSH, Telnet, RDP, HTTP, HTTPS, MySQL, Oracle, VNC sessions and more.</li>
+                    <li>Real-time session control (terminate, pause, join).</li>
+                    <li>Integration with LDAP, Active Directory, Radius, etc.</li>
+                    <li>Behavioral analysis module based on machine learning.</li>
+                    <li>Password management and rotation.</li>
+                    <li>OCR search in sessions (Russian & English).</li>
+                </ul>
+
+                <div class="pdf-links">
+                    <h4>Download official manuals:</h4>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/en/fudo_user_portal.pdf" target="_blank">User Portal Manual (English, PDF)</a>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/en/fudo_system_documentation.pdf" target="_blank">System Documentation (English, PDF)</a>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/portal/pdf/ru/fudo_user_portal_ru.pdf" target="_blank">Руководство пользователя (русский, PDF)</a>
+                    <a href="https://download.fudosecurity.com/documentation/fudo/5_0/pdf/ru/fudo_system_documentation_ru.pdf" target="_blank">Системная документация (русский, PDF)</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Контакты -->
+        <div class="contacts card">
+            <h2>Контакты</h2>
+            <p>Телефон: <a href="tel:+77017839300">+7 701 783 93 00</a></p>
+            <p>Email: <a href="mailto:ipfox@mail.ru">ipfox@mail.ru</a></p>
+            <p>Мы принимаем заявки круглосуточно, а работаем с 9:00 до 18:00 (по времени Астаны)</p>
         </div>
     </div>
-    <!-- Конец блока инструкций -->
 
-    <!-- Остальной сайт (контакты, футер, скрипт с номером заявки) — оставь как есть -->
+    <footer>
+        © 2025 ИП Князев С.А. — Официальный партнёр FUDO PAM в Республике Казахстан
+    </footer>
 
-    -->
-
-    <!-- ФУНКЦИЯ ПЕРЕКЛЮЧЕНИЯ ЯЗЫКА (обязательно в самом низу перед </body>) -->
+    <!-- Переключение языка + номер заявки -->
     <script>
+        // Переключение языка
         function showLang(lang) {
             document.getElementById('lang-ru').style.display = lang === 'ru' ? 'block' : 'none';
             document.getElementById('lang-en').style.display = lang === 'en' ? 'block' : 'none';
-
-            // подсветка активной кнопки
             document.querySelectorAll('.lang-toggle button').forEach(btn => {
-                btn.classList.remove('active');
+                btn.classList.toggle('active', btn.onclick.toString().includes("'" + lang + "'"));
             });
-            event.target.classList.add('active');
         }
 
-        // Глобальный номер заявки (counter.dev) — оставь как есть
+        // Глобальный номер заявки (counter.dev)
         document.getElementById('supportForm').addEventListener('submit', function(e) {
             const btn = this.querySelector('button');
             btn.disabled = true;
